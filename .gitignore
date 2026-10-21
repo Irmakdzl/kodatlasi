@@ -1,0 +1,18 @@
+# Bağımlılıklar (proje zaten bağımlılıksız çalışıyor)
+node_modules/
+npm-debug.log*
+
+# İşletim sistemi
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editör
+.vscode/
+.idea/
+*.swp
+
+# Yerel / geçici
+*.log
+.env
+.env.local
