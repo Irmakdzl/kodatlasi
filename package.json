@@ -1,0 +1,16 @@
+{
+  "name": "kodatlasi",
+  "version": "1.0.0",
+  "description": "Çekirdek üzerine kurulu yazılım geliştirme öğrenme takip uygulaması",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "start:open": "node server.js --open",
+    "test": "node tests/run.js && node tests/smoke.js",
+    "test:unit": "node tests/run.js",
+    "test:smoke": "node tests/smoke.js"
+  },
+  "keywords": ["egitim", "reaktif", "vdom", "spaced-repetition"],
+  "license": "MIT"
+}
