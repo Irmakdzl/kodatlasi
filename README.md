@@ -3,7 +3,10 @@
 > Yazılım geliştirme dersi ödevi — Sıfırdan yazılmış mini bir reaktif UI
 > çerçevesi (**Çekirdek**) üzerine kurulu bir öğrenme takip uygulaması.
 
-**🌐 Canlı Demo:** <https://kodatlasi.surge.sh>
+**🌐 Canlı Demo:** <https://irmakdzl.github.io/kodatlasi/>
+
+**📦 Kaynak Kod:** <https://github.com/Irmakdzl/kodatlasi>
+&nbsp;·&nbsp;**🔁 Yedek adres:** <https://kodatlasi.surge.sh>
 
 > Bağlantıyı hocanıza doğrudan gönderebilirsiniz. Site herkese açıktır,
 > HTTPS ile çalışır ve `localStorage` dışında hiçbir veri toplanmaz.

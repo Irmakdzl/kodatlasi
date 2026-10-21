@@ -2,7 +2,11 @@
 
 > ## ✅ Site yayında
 >
-> **Canlı adres:** <https://kodatlasi.surge.sh>
+> | | |
+> |---|---|
+> | **Canlı adres** | <https://irmakdzl.github.io/kodatlasi/> |
+> | **Yedek adres** | <https://kodatlasi.surge.sh> |
+> | **Kaynak kod** | <https://github.com/Irmakdzl/kodatlasi> |
 >
 > Herkese açık, HTTPS, kalıcı. Hocaya bu bağlantıyı gönderebilirsiniz.
 
