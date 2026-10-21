@@ -1,0 +1,16 @@
+# Satır sonu normalizasyonu (Windows / Linux tutarlılığı)
+* text=auto eol=lf
+
+*.js   text eol=lf
+*.css  text eol=lf
+*.html text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+
+*.bat  text eol=crlf
+*.sh   text eol=lf
+
+*.png  binary
+*.jpg  binary
+*.ico  binary

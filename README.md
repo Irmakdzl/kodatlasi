@@ -3,10 +3,18 @@
 > Yazılım geliştirme dersi ödevi — Sıfırdan yazılmış mini bir reaktif UI
 > çerçevesi (**Çekirdek**) üzerine kurulu bir öğrenme takip uygulaması.
 
+<!--
+  >>> Yayınladıktan sonra aşağıdaki satırı kendi adresinle değiştirin:
+  [Canlı Demo](https://KULLANICI_ADIN.github.io/kodatlasi/) | [Kaynak Kod](https://github.com/KULLANICI_ADIN/kodatlasi)
+-->
+
 KodAtlası, "öğreneceğim konuları listeleyip aralıklı tekrar ile pekiştirme"
 fikrini hayata geçiren bir web uygulamasıdır. Kullanılan reaktiflik, sanal
 DOM ve bileşen modeli hazır bir kütüphane değildir; **projenin kendi
 `cekirdek/` klasöründe sıfırdan yazılmıştır.**
+
+> 📤 **Yayınlama?** → [YAYINLAMA.md](YAYINLAMA.md) rehberi (Netlify Drop,
+> GitHub Pages, Vercel, Cloudflare — 5 dakikada canlı adres).
 
 ---
 
