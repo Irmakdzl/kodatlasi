@@ -1,0 +1,296 @@
+/* ==========================================================================
+   KodAtlası · Temel Katman
+   1. Tasarım değişkenleri (tema)
+   2. Sıfırlama ve tipografi
+   3. Sayfa iskeleti (layout)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tasarım değişkenleri
+   -------------------------------------------------------------------------- */
+
+:root {
+  color-scheme: dark;
+
+  /* Yüzeyler */
+  --zemin: #070a12;
+  --zemin-2: #0c111d;
+  --yuzey: rgba(20, 27, 45, 0.72);
+  --yuzey-dolu: #141b2d;
+  --yuzey-2: rgba(31, 41, 66, 0.78);
+  --kenar: rgba(255, 255, 255, 0.08);
+  --kenar-parlak: rgba(120, 150, 215, 0.32);
+
+  /* Metin */
+  --metin: #e8eefb;
+  --metin-2: #9dabc7;
+  --metin-3: #6b7997;
+
+  /* Vurgu renkleri */
+  --vurgu: #5b8cff;
+  --vurgu-yumusak: rgba(91, 140, 255, 0.14);
+  --vurgu-2: #a06bff;
+  --vurgu-2-yumusak: rgba(160, 107, 255, 0.14);
+  --basari: #2fd6a5;
+  --basari-yumusak: rgba(47, 214, 165, 0.14);
+  --uyari: #ffb454;
+  --uyari-yumusak: rgba(255, 180, 84, 0.14);
+  --hata: #ff6b81;
+  --hata-yumusak: rgba(255, 107, 129, 0.14);
+
+  /* Ölçüler */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 26px;
+  --golge: 0 22px 50px -24px rgba(0, 0, 0, 0.85);
+  --gecis: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  --yazi: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  --yazi-mono: 'JetBrains Mono', 'Cascadia Code', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+[data-theme='acik'] {
+  color-scheme: light;
+
+  --zemin: #eef2fb;
+  --zemin-2: #f7f9fe;
+  --yuzey: rgba(255, 255, 255, 0.82);
+  --yuzey-dolu: #ffffff;
+  --yuzey-2: rgba(233, 239, 252, 0.9);
+  --kenar: rgba(20, 32, 64, 0.1);
+  --kenar-parlak: rgba(91, 140, 255, 0.35);
+
+  --metin: #16203a;
+  --metin-2: #4d5b7a;
+  --metin-3: #7b88a6;
+
+  --vurgu: #3268e0;
+  --vurgu-yumusak: rgba(50, 104, 224, 0.1);
+  --vurgu-2: #7c42e0;
+  --vurgu-2-yumusak: rgba(124, 66, 224, 0.1);
+  --basari: #0fa87d;
+  --basari-yumusak: rgba(15, 168, 125, 0.12);
+  --uyari: #c77900;
+  --uyari-yumusak: rgba(199, 121, 0, 0.12);
+  --hata: #d63d55;
+  --hata-yumusak: rgba(214, 61, 85, 0.1);
+
+  --golge: 0 18px 44px -26px rgba(24, 44, 96, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   2. Sıfırlama ve tipografi
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--yazi);
+  background: var(--zemin);
+  color: var(--metin);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--yazi-mono);
+}
+
+kbd {
+  font-size: 0.68rem;
+  padding: 1px 5px;
+  border-radius: 5px;
+  border: 1px solid var(--kenar);
+  background: var(--yuzey-2);
+  color: var(--metin-3);
+}
+
+:focus-visible {
+  outline: 2px solid var(--vurgu);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--vurgu-yumusak);
+}
+
+/* --------------------------------------------------------------------------
+   3. Sayfa iskeleti
+   -------------------------------------------------------------------------- */
+
+/* Dekoratif ışık lekeleri */
+.arka-plan {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 520px at 12% -8%, var(--vurgu-yumusak), transparent 62%),
+    radial-gradient(760px 460px at 92% 4%, var(--vurgu-2-yumusak), transparent 60%),
+    radial-gradient(700px 500px at 60% 104%, var(--basari-yumusak), transparent 66%);
+}
+
+.uygulama {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 22px 20px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  min-height: 100vh;
+}
+
+.icerik {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  flex: 1;
+}
+
+.alt-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid var(--kenar);
+  color: var(--metin-3);
+  font-size: 0.8rem;
+}
+
+.alt-bar__ipucu {
+  font-family: var(--yazi-mono);
+  font-size: 0.74rem;
+}
+
+/* --------------------------------------------------------------------------
+   Dosya modu uyarısı
+   -------------------------------------------------------------------------- */
+
+.dosya-modu {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--zemin);
+  z-index: 50;
+}
+
+.dosya-modu[hidden] {
+  display: none;
+}
+
+.dosya-modu__kart {
+  max-width: 620px;
+  background: var(--yuzey-dolu);
+  border: 1px solid var(--kenar);
+  border-radius: var(--r-lg);
+  padding: 32px;
+  box-shadow: var(--golge);
+}
+
+.dosya-modu__kart h1 {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+}
+
+.dosya-modu__kart p {
+  color: var(--metin-2);
+  margin-bottom: 12px;
+}
+
+.dosya-modu__kart code {
+  background: var(--yuzey-2);
+  padding: 2px 6px;
+  border-radius: 5px;
+  color: var(--vurgu);
+}
+
+.dosya-modu__kart pre {
+  background: var(--zemin-2);
+  border: 1px solid var(--kenar);
+  border-radius: var(--r-md);
+  padding: 14px 16px;
+  overflow-x: auto;
+}
+
+.dosya-modu__kart pre code {
+  background: none;
+  padding: 0;
+  color: var(--basari);
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   Duyarlılık
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 860px) {
+  .uygulama {
+    padding: 16px 14px 36px;
+    gap: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
