@@ -16,3 +16,7 @@ desktop.ini
 *.log
 .env
 .env.local
+
+# Surge CLI'nin otomatik ürettiği CNAME (GitHub Pages'te özel alan adı
+# ayarı sanılır ve siteyi bozar - depoya eklenmemeli)
+CNAME

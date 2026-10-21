@@ -1,5 +1,11 @@
 # KodAtlası — Yayınlama Rehberi
 
+> ## ✅ Site yayında
+>
+> **Canlı adres:** <https://kodatlasi.surge.sh>
+>
+> Herkese açık, HTTPS, kalıcı. Hocaya bu bağlantıyı gönderebilirsiniz.
+
 Bu proje **tamamen statiktir**: derleme adımı, sunucu tarafı kod ve harici
 paket yoktur. Bu yüzden herhangi bir statik barındırma servisine doğrudan
 yüklenebilir.
@@ -91,13 +97,23 @@ Adres: `https://kodatlasi.pages.dev`
 
 ---
 
-## Yol 5 — Surge *(en basit CLI)*
+## Yol 5 — Surge *(en basit CLI — **şu an bu kullanılıyor**)*
 
 ```bash
-npx surge
+npx surge . kodatlasi.surge.sh
 ```
 
-Adres: `https://rastgele-ad.surge.sh`
+Adres: `https://kodatlasi.surge.sh` ← **yayınlanan adres**
+
+Surge'da hesap tek komutla açılır, ardından gelen e-postadaki doğrulama
+bağlantısına tıklanır ve site yayına başlar. Terminalde hesap açmak için:
+
+```bash
+npx surge login
+```
+
+> **Not:** Surge her yeni hesap için e-posta doğrulaması ister. Doğrulama
+> yapılmadan site `403` döner.
 
 ---
 
